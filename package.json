@@ -1,0 +1,56 @@
+{
+  "name": "leetcode-backend",
+  "version": "1.0.0",
+  "description": "Backend API for LeetCode clone application",
+  "main": "dist/server.js",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc-watch --onSuccess \"node ./dist/server.js\"",
+    "build": "tsc",
+    "start": "NODE_ENV=production node ./dist/server.js",
+    "lint": "eslint src/**/*.ts",
+    "lint:fix": "eslint src/**/*.ts --fix",
+    "format": "prettier --write \"src/**/*.ts\"",
+    "clean": "rm -rf dist"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RitickLath/leetcode-backend.git"
+  },
+  "keywords": [
+    "leetcode",
+    "backend",
+    "api",
+    "nodejs",
+    "express",
+    "typescript"
+  ],
+  "author": "RitickLath",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RitickLath/leetcode-backend/issues"
+  },
+  "homepage": "https://github.com/RitickLath/leetcode-backend#readme",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.3",
+    "express": "^5.2.1",
+    "helmet": "^8.0.0",
+    "mongoose": "^9.1.5",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.19",
+    "@types/express": "^5.0.6",
+    "@types/morgan": "^1.9.9",
+    "@types/node": "^25.0.10",
+    "eslint": "^9.39.2",
+    "nodemon": "^3.1.11",
+    "prettier": "^3.8.1",
+    "tsc-watch": "^7.2.0",
+    "typescript": "^5.9.3"
+  }
+}
