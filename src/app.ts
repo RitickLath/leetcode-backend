@@ -5,6 +5,8 @@ import express, {
   type NextFunction,
 } from "express";
 import cors from "cors";
+import cookieParser from "cookie-parser";
+import route from "./routes/index.js";
 
 const app: Application = express();
 
@@ -19,6 +21,8 @@ app.use(
 app.use(express.json({ limit: "10kb" }));
 app.use(express.urlencoded({ extended: true }));
 
+app.use(cookieParser());
+
 // Health check endpoint
 app.get("/health", (_req: Request, res: Response) => {
   res.status(200).json({
@@ -30,9 +34,7 @@ app.get("/health", (_req: Request, res: Response) => {
 
 const API_PREFIX = "/api/v1";
 
-app.use(`${API_PREFIX}/auth`, () => {});
-app.use(`${API_PREFIX}/problems`, () => {});
-app.use(`${API_PREFIX}/submissions`, () => {});
+app.use(`${API_PREFIX}/auth`, route.authRoute);
 
 // 404 handler
 app.use((_req: Request, res: Response) => {
