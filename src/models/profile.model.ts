@@ -1,22 +1,5 @@
 import mongoose, { Schema, Types } from "mongoose";
-
-export interface IProfile {
-  userId: Types.ObjectId;
-
-  avatar?: string;
-  bio?: string;
-  location?: string;
-  website?: string;
-  githubUrl?: string;
-
-  maxStreak: number;
-  currentStreak: number;
-  totalSolved: number;
-  totalAttempts: number;
-
-  likeCount: number;
-  saveCount: number;
-}
+import type { IProfile } from "types/model.types.js";
 
 const profileSchema = new Schema<IProfile>(
   {

@@ -1,18 +1,6 @@
 import mongoose, { Types, type HydratedDocument } from "mongoose";
+import type { IUser } from "types/model.types.js";
 import bcrypt from "bcrypt";
-
-interface IUser {
-  firstName: string;
-  lastName?: string;
-
-  email: string;
-  password: string;
-
-  isVerified: boolean;
-  verificationToken?: string | null;
-
-  profile?: Types.ObjectId;
-}
 
 const userSchema = new mongoose.Schema<IUser>(
   {
