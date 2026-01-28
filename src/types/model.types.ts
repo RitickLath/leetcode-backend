@@ -98,3 +98,45 @@ export interface ISubmission {
   createdAt?: Date;
   updatedAt?: Date;
 }
+
+// Example Test Interface
+export interface ITestCase {
+  problemId: Types.ObjectId;
+
+  order: number;
+
+  accessType: "PUBLIC" | "PRIVATE";
+
+  inputText: string;
+  outputText: string;
+
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+// Thread Interface
+export interface IThread {
+  problemId: Types.ObjectId;
+  userId: Types.ObjectId;
+
+  title: string;
+  content: string;
+
+  commentCount: number;
+
+  createdAt?: Date;
+  updatedAt?: Date;
+}
+
+// Comment Interface
+export interface IComment {
+  threadId: Types.ObjectId;
+  userId: Types.ObjectId;
+
+  parentCommentId?: Types.ObjectId | null;
+
+  content: string;
+
+  createdAt?: Date;
+  updatedAt?: Date;
+}
